@@ -63,8 +63,8 @@ public class Product {
     private String category;
     //@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyy")		This is done to handle the date format in the backend
     private Date releaseDate;
-    private boolean available;
-    private int quantity;
+    private boolean productAvailable;
+    private int stockQuantity;
     private String imageName;
     private String imageType;
     @Lob
@@ -76,7 +76,7 @@ public class Product {
     
 
     public Product(int id, String name, String description, String brand, BigDecimal price, String category,
-			Date releaseDate, boolean available, int quantity, String imageName, String imageType, byte[] imageDate) {
+			Date releaseDate, boolean productAvailable, int stockQuantity, String imageName, String imageType, byte[] imageDate) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -85,8 +85,8 @@ public class Product {
 		this.price = price;
 		this.category = category;
 		this.releaseDate = releaseDate;
-		this.available = available;
-		this.quantity = quantity;
+		this.productAvailable = productAvailable;
+		this.stockQuantity = stockQuantity;
 		this.imageName = imageName;
 		this.imageType = imageType;
 		this.imageDate = imageDate;
@@ -150,19 +150,19 @@ public class Product {
     }
 
     public boolean isAvailable() {
-        return available;
+        return productAvailable;
     }
 
     public void setAvailable(boolean available) {
-        this.available = available;
+        this.productAvailable = productAvailable;
     }
 
     public int getQuantity() {
-        return quantity;
+        return stockQuantity;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setQuantity(int stockQuantity) {
+        this.stockQuantity = stockQuantity;
     }
 
 	public String getImageName() {
