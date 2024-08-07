@@ -15,53 +15,17 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-//@Entity
-//@Data
-//@AllArgsConstructor
-//@NoArgsConstructor
-//public class Product 
-//{
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)			//This is used to generate id automatically like 1,2,3...
-//	private int id;
-//	private String name;
-//	private String description;
-//	private String brand;
-//	private BigDecimal price;
-//	private String category;
-//	private Date ReleaseDate;
-//	private boolean available;
-//	private int quantity;
-//
-//}
-//@Entity
-////@Data
-////@AllArgsConstructor
-////@NoArgsConstructor
-//public class Product {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private int id;
-//    private String name;
-//    private String description; 
-//    private String brand;
-//    private BigDecimal price;
-//    private String category;
-//    private Date releaseDate;
-//    private boolean available;
-//    private int quantity;
-//}
+
 @Entity
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
-    private String description; // Renamed from 'desc'
+    private String description;
     private String brand;
     private BigDecimal price;
     private String category;
-    //@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyy")		This is done to handle the date format in the backend
     private Date releaseDate;
     private boolean productAvailable;
     private int stockQuantity;
@@ -73,26 +37,23 @@ public class Product {
     // Constructors
     public Product() {}
 
-    
-
     public Product(int id, String name, String description, String brand, BigDecimal price, String category,
-			Date releaseDate, boolean productAvailable, int stockQuantity, String imageName, String imageType, byte[] imageDate) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.description = description;
-		this.brand = brand;
-		this.price = price;
-		this.category = category;
-		this.releaseDate = releaseDate;
-		this.productAvailable = productAvailable;
-		this.stockQuantity = stockQuantity;
-		this.imageName = imageName;
-		this.imageType = imageType;
-		this.imageDate = imageDate;
-	}
+                   Date releaseDate, boolean productAvailable, int stockQuantity, String imageName, String imageType, byte[] imageDate) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.brand = brand;
+        this.price = price;
+        this.category = category;
+        this.releaseDate = releaseDate;
+        this.productAvailable = productAvailable;
+        this.stockQuantity = stockQuantity;
+        this.imageName = imageName;
+        this.imageType = imageType;
+        this.imageDate = imageDate;
+    }
 
-	// Getters and Setters
+    // Getters and Setters
     public int getId() {
         return id;
     }
@@ -149,44 +110,43 @@ public class Product {
         this.releaseDate = releaseDate;
     }
 
-    public boolean isAvailable() {
+    public boolean isProductAvailable() {
         return productAvailable;
     }
 
-    public void setAvailable(boolean available) {
+    public void setProductAvailable(boolean productAvailable) {
         this.productAvailable = productAvailable;
     }
 
-    public int getQuantity() {
+    public int getStockQuantity() {
         return stockQuantity;
     }
 
-    public void setQuantity(int stockQuantity) {
+    public void setStockQuantity(int stockQuantity) {
         this.stockQuantity = stockQuantity;
     }
 
-	public String getImageName() {
-		return imageName;
-	}
+    public String getImageName() {
+        return imageName;
+    }
 
-	public void setImageName(String imageName) {
-		this.imageName = imageName;
-	}
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
+    }
 
-	public String getImageType() {
-		return imageType;
-	}
+    public String getImageType() {
+        return imageType;
+    }
 
-	public void setImageType(String imageType) {
-		this.imageType = imageType;
-	}
+    public void setImageType(String imageType) {
+        this.imageType = imageType;
+    }
 
-	public byte[] getImageDate() {
-		return imageDate;
-	}
+    public byte[] getImageDate() {
+        return imageDate;
+    }
 
-	public void setImageDate(byte[] imageDate) {
-		this.imageDate = imageDate;
-	}
-    
+    public void setImageDate(byte[] imageDate) {
+        this.imageDate = imageDate;
+    }
 }

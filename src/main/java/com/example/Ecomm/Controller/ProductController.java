@@ -22,28 +22,6 @@ import org.springframework.web.multipart.MultipartFile;
 import com.example.Ecomm.Model.Product;
 import com.example.Ecomm.Services.ProductService;
 
-//@RestController
-//@CrossOrigin
-//@RequestMapping("/api")
-//public class ProductController 
-//{
-//	@Autowired
-//	private ProductService service;
-//	@RequestMapping("/")
-//	public String greet()
-//	{
-//		return "Hello rajath reigns";
-//	}
-//	
-//	@GetMapping("/products")
-//	public List<Product> getAllProducts()
-//	{
-//		System.out.println("Fetching all the records this is the controller");
-//		return service.getAllProducts();
-//	}
-//
-//}
-
 @RestController
 @CrossOrigin
 @RequestMapping("/api")
